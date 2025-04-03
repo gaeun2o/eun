@@ -1,0 +1,14 @@
+<html>
+    <head></head>
+    <body>
+        <input type ='button' id='btnclk' value ='버튼' >
+        <script>
+            function msg(event){
+                alert(event.type);//발생한 이벤트 타입
+                alert("x좌표:"+event.clientX); // 이벤트 객체 _ 커서 좌표 저장
+                alert("y좌표:"+event.clientY);
+            }
+            btnclk.addEventListener("click", msg);
+        </script>
+    </body>
+</html>
