@@ -8,6 +8,12 @@
   </head>
   <body>
         <%-include ('menu.html') %>
+        <p></p>
+        <div class="container input-group ml-2 my-3">
+          <input class="form-control sword" type="search" placeholder="검색어 입력">
+          <button class="btn btn-success input-group-append sbtn">검색하기</button> </input>
+        </div>
+
     <h1>홈입니다.</h1>
 
     <% if (user) { %>
@@ -30,6 +36,12 @@
       $('.signup').click(function(e){
         location.href="/signup";
       })
+
+      $('.sbtn').click(function(){
+          let inputValue = $('.sword').val();
+          location.href = '/search?value=' + inputValue;
+        })
+
     </script>
   
   </body>

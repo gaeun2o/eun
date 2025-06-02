@@ -9,10 +9,10 @@
   <body>    
     <%-include ('menu.html') %>
       <div class="container mt-4">
-      <form action="/edit" method ="post">
+      <form action="/edit" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="id" value="<%= data._id %>">
         <div class="form-group">
           <label>제목</label>
-          <input type="text" value="<%= data._id %>" name="id" style="display:none;">
           <input type="text" value="<%= data.title %>" name="title" class="form-control">
         </div>
         <p></p>
@@ -20,6 +20,13 @@
           <label>내용</label>
           <textarea name="content" rows="10" class="form-control">
           <%= data.content %></textarea>
+          <% if(data.path) { %>
+          <img src="<%= data.path %>" width="200" >
+          <input type="file" name="picture" class="form-control">
+          <br>
+          <% } %>
+          
+
         </div>
         <p></p>
         <div class="form-group">
